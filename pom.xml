@@ -79,6 +79,7 @@
                 <version>2.22.2</version>
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
+
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>

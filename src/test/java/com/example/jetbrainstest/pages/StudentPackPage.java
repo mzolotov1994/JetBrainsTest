@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.List;
 
 public class StudentPackPage {
 
+    private final Logger LOG = LoggerFactory.getLogger(StudentPackPage.class);
     WebDriver driver;
 
     @FindBy(xpath = "//a[contains(@href,\"buy?item=P:N:ALL:Y\")]")
@@ -27,18 +30,18 @@ public class StudentPackPage {
     WebElement mainLink;
 
     public boolean checkBuyButtonIsClickable() {
-        System.out.println("Проверка активности кнопки купить");
+        LOG.info("Проверка активности кнопки купить");
         return buyButton.isEnabled();
     }
 
     public boolean checkFirstVideoInstructionIsVisible() {
-        System.out.println("Проверка отображения первой видеоинструкции");
+        LOG.info("Проверка отображения первой видеоинструкции");
         return firstVideoInstruction.isDisplayed();
     }
 
     public void clickMainPageLink() {
         mainLink.click();
-        System.out.println("Осуществили переход на главную страницу сайта");
+        LOG.info("Осуществили переход на главную страницу сайта");
     }
 
     public void acceptCookies() {
