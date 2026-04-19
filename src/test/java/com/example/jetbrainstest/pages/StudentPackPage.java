@@ -26,7 +26,7 @@ public class StudentPackPage {
     @FindBy(xpath = "//video[.//source[contains(@src,\"dev_tools.mp4\")]]")
     WebElement firstVideoInstruction;
 
-    @FindBy(css = "svg._siteLogo__image_hu8cyn_1")
+    @FindBy(css = "svg[class*='_siteLogo__image']")
     WebElement mainLink;
 
     public boolean checkBuyButtonIsClickable() {
