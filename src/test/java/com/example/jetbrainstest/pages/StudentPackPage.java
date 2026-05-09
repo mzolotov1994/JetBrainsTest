@@ -1,5 +1,6 @@
 package com.example.jetbrainstest.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,16 +30,19 @@ public class StudentPackPage {
     @FindBy(css = "svg[class*='_siteLogo__image']")
     WebElement mainLink;
 
+    @Step("Проверка активности кнопки купить")
     public boolean checkBuyButtonIsClickable() {
         LOG.info("Проверка активности кнопки купить");
         return buyButton.isEnabled();
     }
 
+    @Step("Проверка отображения первой видеоинструкции")
     public boolean checkFirstVideoInstructionIsVisible() {
         LOG.info("Проверка отображения первой видеоинструкции");
         return firstVideoInstruction.isDisplayed();
     }
 
+    @Step("Осуществили переход на главную страницу сайта")
     public void clickMainPageLink() {
         mainLink.click();
         LOG.info("Осуществили переход на главную страницу сайта");
