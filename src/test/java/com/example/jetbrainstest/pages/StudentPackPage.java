@@ -32,18 +32,18 @@ public class StudentPackPage {
     WebElement mainLink;
 
     public boolean checkBuyButtonIsClickable() {
-        LOG.info("Проверка активности кнопки купить");
+        LOG.infoWithScreenshot("Проверка активности кнопки купить");
         return buyButton.isEnabled();
     }
 
     public boolean checkFirstVideoInstructionIsVisible() {
-        LOG.info("Проверка отображения первой видеоинструкции");
+        LOG.infoWithScreenshot("Проверка отображения первой видеоинструкции");
         return firstVideoInstruction.isDisplayed();
     }
 
     public void clickMainPageLink() {
         mainLink.click();
-        LOG.info("Осуществили переход на главную страницу сайта");
+        LOG.infoWithScreenshot("Осуществили переход на главную страницу сайта");
     }
 
     public void acceptCookies() {
