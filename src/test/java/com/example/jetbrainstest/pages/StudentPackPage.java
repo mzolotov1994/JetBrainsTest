@@ -1,6 +1,6 @@
 package com.example.jetbrainstest.pages;
 
-import io.qameta.allure.Step;
+import com.example.jetbrainstest.AllureLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
@@ -18,7 +17,9 @@ import java.util.List;
 
 public class StudentPackPage {
 
-    private final Logger LOG = LoggerFactory.getLogger(StudentPackPage.class);
+    //private final Logger LOG = LoggerFactory.getLogger(StudentPackPage.class);
+    private final AllureLogger LOG = new AllureLogger(LoggerFactory.getLogger(StudentPackPage.class));
+
     WebDriver driver;
 
     @FindBy(xpath = "//a[contains(@href,\"buy?item=P:N:ALL:Y\")]")
@@ -30,19 +31,16 @@ public class StudentPackPage {
     @FindBy(css = "svg[class*='_siteLogo__image']")
     WebElement mainLink;
 
-    @Step("Проверка активности кнопки купить")
     public boolean checkBuyButtonIsClickable() {
         LOG.info("Проверка активности кнопки купить");
         return buyButton.isEnabled();
     }
 
-    @Step("Проверка отображения первой видеоинструкции")
     public boolean checkFirstVideoInstructionIsVisible() {
         LOG.info("Проверка отображения первой видеоинструкции");
         return firstVideoInstruction.isDisplayed();
     }
 
-    @Step("Осуществили переход на главную страницу сайта")
     public void clickMainPageLink() {
         mainLink.click();
         LOG.info("Осуществили переход на главную страницу сайта");
