@@ -66,11 +66,11 @@ public class StudentPackPage {
     @FindBy(xpath = "//header//button[@data-test='language-picker']")
     WebElement changeLanguageButton;
 
-    @FindBy(xpath = "//span[contains(@class,'wt-language-grid__language_row_1') and contains(@class,'wt-language-grid__language_column_3')]")
+    @FindBy(xpath = "//span[@data-test='list-item' and .//span[text()='Русский']]")
     WebElement russianLanguageLink;
 
     //Элемент для проверки перехода по ссылке Discord
-    @FindBy(xpath = "//a[@href='https://discord.com/invite/jpsDuV37bW']")
+    @FindBy(xpath = "//a[contains(@href,'discord.com/invite/') and text()='Discord']")
     WebElement discordLink;
 
     //Элементы для проверки Поиска
